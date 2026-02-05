@@ -23,8 +23,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to Kubernetes...'
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh '''
+                    export KUBECONFIG=/home/asonia/.kube/config
+                    kubectl apply -f deployment.yaml
+                    kubectl apply -f service.yaml
+                '''
             }
         }
     }
