@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Deploying to Kubernetes...'
                 sh '''
-                    export KUBECONFIG=/home/asonia/.kube/config
+                    export KUBECONFIG=$HOME/.kube/config
                     kubectl apply -f deployment.yaml
                     kubectl apply -f service.yaml
                 '''
