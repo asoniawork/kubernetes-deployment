@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning repository from GitHub...'
                 git branch: 'main', 
-                    url: 'https://github.com/YOUR_GITHUB_USERNAME/kubernetes-deployment.git'
+                    url: 'https://github.com/asoniawork/kubernetes-deployment.git'
                 echo 'Repository cloned successfully!'
             }
         }
