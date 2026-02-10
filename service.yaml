@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: client-nodeport
+spec:
+  type: NodePort
+  ports: 
+    - port: 80
+      targetPort: 80
+      nodePort: 30303
+  selector:
+    component: web
